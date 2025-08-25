@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Job Seekers | Sebetsa Africa</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
+      background-color: #f3efe6; color: #1B5E20;
+      line-height: 1.6; scroll-behavior: smooth;
+    }
+    a { text-decoration: none; }
+
+    header { background-color: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 10px 20px; }
+    .logo-outer img { max-height: 60px; height: auto; }
+    .nav-links { list-style: none; display: flex; flex-wrap: wrap; gap: 15px; padding: 0; margin: 0; }
+    .nav-links li a { color: #1B5E20; font-weight: 600; padding: 8px 12px; border-radius: 6px; transition: background 0.3s, color 0.3s; }
+    .nav-links li a:hover, .nav-links li a.active { background-color: #FDD835; color: #1B5E20; }
+
+    .hero {
+      text-align: center; padding: 50px 20px;
+      max-width: 800px; margin: 0 auto;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .hero h1 { font-size: clamp(2rem, 5vw, 2.5rem); margin-bottom: 15px; animation: fadeUp 1s ease-in-out; }
+    .hero p { font-size: clamp(1rem, 2.5vw, 1.2rem); margin-bottom: 30px; line-height: 1.6; animation: fadeUp 1.2s ease-in-out; text-align: center; }
+
+    form {
+      display: flex; flex-direction: column; gap: 15px; animation: fadeIn 1s ease-in-out;
+    }
+    form label { font-weight: 600; }
+    form input[type="text"], form input[type="email"], form select, form textarea, form input[type="file"] {
+      padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-family: inherit; width: 100%;
+    }
+    form button {
+      background-color: #FDD835; color: #1B5E20; font-weight: 700; padding: 12px 20px;
+      border: none; border-radius: 6px; cursor: pointer; margin-top: 10px; transition: 0.3s ease;
+    }
+    form button:hover { background-color: #e6c200; }
+
+    #backToTop {
+      position: fixed; bottom: 30px; right: 30px;
+      background-color: #FDD835; color: #1B5E20;
+      border: none; border-radius: 50%; width: 50px; height: 50px;
+      font-size: 1.5rem; cursor: pointer; display: none; align-items: center; justify-content: center;
+      z-index: 100; transition: background 0.3s;
+    }
+    #backToTop:hover { background-color: #FFC107; }
+
+    footer { background-color: #fff; text-align: center; padding: 20px; margin-top: 40px; box-shadow: 0 -2px 6px rgba(0,0,0,0.05); }
+
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 480px) {
+      .hero { padding: 40px 15px; }
+      .hero h1 { font-size: 1.8rem; }
+      .hero p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo-outer">
+        <img src="images/logo.JPG" alt="Sebetsa Africa Logo" />
+      </a>
+      <div class="container">
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="jobseekers.html" class="active">Job Seekers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Job Seekers</h1>
+      <p>At Sebetsa Africa, we help you find the right career opportunities that match your skills and aspirations. Please complete the form below to submit your application.</p>
+
+      <form action="#" method="post" enctype="multipart/form-data">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="industry">Industry:</label>
+        <select id="industry" name="industry" required>
+          <option value="">-- Select Industry --</option>
+          <option value="logistics">Logistics & Supply Chain</option>
+          <option value="finance">Finance & Accounting</option>
+          <option value="it">Information Technology</option>
+          <option value="engineering">Engineering</option>
+          <option value="hr">Human Resources</option>
+          <option value="marketing">Sales & Marketing</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="qualification">Highest Qualification:</label>
+        <select id="qualification" name="qualification" required>
+          <option value="">-- Select Qualification --</option>
+          <option value="matric">Matric / High School</option>
+          <option value="certificate">Certificate / Diploma</option>
+          <option value="bachelors">Bachelor’s Degree</option>
+          <option value="honours">Honours Degree</option>
+          <option value="masters">Master’s Degree</option>
+          <option value="phd">Doctorate (PhD)</option>
+        </select>
+
+        <label for="coverletter">Cover Letter / Short Bio (optional):</label>
+        <textarea id="coverletter" name="coverletter" rows="5"></textarea>
+
+        <label for="resume">Upload Resume (PDF/DOC):</label>
+        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required />
+
+        <button type="submit">Submit Application</button>
+      </form>
+    </section>
+  </main>
+
+  <button id="backToTop">&#8679;</button>
+
+  <footer>
+    <p>&copy; 2025 Sebetsa Africa. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const backToTopButton = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      backToTopButton.style.display = window.scrollY > 300 ? "flex" : "none";
+    });
+    backToTopButton.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
+</body>
+</html>

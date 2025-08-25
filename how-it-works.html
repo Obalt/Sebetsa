@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>How It Works | Sebetsa Africa</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
+      background-color: #f3efe6;
+      color: #1B5E20;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    a { text-decoration: none; }
+
+    header { background-color: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 10px 20px; }
+    .logo-outer img { max-height: 60px; height: auto; }
+    .nav-links { list-style: none; display: flex; flex-wrap: wrap; gap: 15px; padding: 0; margin: 0; }
+    .nav-links li a { color: #1B5E20; font-weight: 600; padding: 8px 12px; border-radius: 6px; transition: background 0.3s, color 0.3s; }
+    .nav-links li a:hover, .nav-links li a.active { background-color: #FDD835; color: #1B5E20; }
+
+    .hero {
+      padding: 50px 20px 30px;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .hero h1 { font-size: clamp(2rem, 5vw, 2.5rem); margin-bottom: 15px; animation: fadeUp 1s ease-in-out; }
+    .hero p {
+      max-width: 800px;
+      margin: 20px auto 15px;  /* centered like other pages */
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      line-height: 1.6;
+      text-align: center;       /* changed from justify to center */
+      animation: fadeUp 1.2s ease-in-out;
+    }
+
+    .content { max-width: 900px; margin: 40px auto; padding: 0 20px; animation: fadeIn 1s ease-in-out; }
+    .content h2 { text-align: center; margin-bottom: 25px; font-size: clamp(1.8rem, 4vw, 2rem); animation: fadeUp 1.2s ease-in-out; }
+    .content h3 { margin-top: 25px; margin-bottom: 10px; font-size: clamp(1.2rem, 3vw, 1.4rem); animation: fadeUp 1.4s ease-in-out; }
+    .content p { text-align: justify; margin-bottom: 10px; animation: fadeUp 1.6s ease-in-out; }
+
+    #backToTop {
+      position: fixed; bottom: 30px; right: 30px;
+      background-color: #FDD835; color: #1B5E20;
+      border: none; border-radius: 50%; width: 50px; height: 50px;
+      font-size: 1.5rem; cursor: pointer; display: none; align-items: center; justify-content: center;
+      z-index: 100; transition: background 0.3s;
+    }
+    #backToTop:hover { background-color: #FFC107; }
+
+    footer { background-color: #fff; text-align: center; padding: 20px; margin-top: 40px; box-shadow: 0 -2px 6px rgba(0,0,0,0.05); }
+
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 768px) {
+      .nav-links { flex-direction: column; width: 100%; }
+      .nav-links li { width: 100%; text-align: center; }
+      header .container { flex-direction: column; align-items: flex-start; }
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1.1rem; }
+      .content h2 { font-size: 1.6rem; }
+      .content h3 { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo-outer">
+        <img src="images/logo.JPG" alt="Sebetsa Africa Logo" />
+      </a>
+      <div class="container">
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="how-it-works.html" class="active">How It Works</a></li>
+            <li><a href="jobseekers.html">Job Seekers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>How It Works</h1>
+      <p>
+        Whether you need new hires or want to optimize your existing workforce, Sebetsa Africa follows a simple but effective process to deliver results.
+      </p>
+    </section>
+
+    <section class="content">
+      <h2>Our Process</h2>
+
+      <h3>🔹 Step 1: Consultation</h3>
+      <p>We start with a detailed consultation to understand your business needs, challenges, and workforce requirements.</p>
+
+      <h3>🔹 Step 2: Workforce Assessment</h3>
+      <p>For existing clients, we review current workforce structures, contracts, compliance, and HR systems to identify gaps and areas for improvement.</p>
+
+      <h3>🔹 Step 3: Tailored Solutions</h3>
+      <p>Based on your needs, we provide customized workforce solutions, which may include recruitment, training, compliance alignment, or process optimization.</p>
+
+      <h3>🔹 Step 4: Ongoing Support</h3>
+      <p>Our partnership doesn’t end at placement or consultation. We provide continuous support to ensure that your workforce remains efficient, compliant, and aligned with business goals.</p>
+    </section>
+  </main>
+
+  <button id="backToTop">&#8679;</button>
+
+  <footer>
+    <p>&copy; 2025 Sebetsa Africa. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const backToTopButton = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) backToTopButton.style.display = "flex";
+      else backToTopButton.style.display = "none";
+    });
+    backToTopButton.addEventListener("click", () => { window.scrollTo({ top: 0, behavior: "smooth" }); });
+  </script>
+</body>
+</html>
+

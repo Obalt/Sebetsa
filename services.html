@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services | Sebetsa Africa</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
+      background-color: #f3efe6;
+      color: #1B5E20;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    a { text-decoration: none; }
+
+    header { background-color: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 10px 20px; }
+    .logo-outer img { max-height: 60px; height: auto; }
+    .nav-links { list-style: none; display: flex; flex-wrap: wrap; gap: 15px; padding: 0; margin: 0; }
+    .nav-links li a { color: #1B5E20; font-weight: 600; padding: 8px 12px; border-radius: 6px; transition: background 0.3s, color 0.3s; }
+    .nav-links li a:hover, .nav-links li a.active { background-color: #FDD835; color: #1B5E20; }
+
+    .hero { text-align: center; padding: 50px 20px; max-width: 800px; margin: 0 auto; animation: fadeIn 1s ease-in-out; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 2.5rem); margin-bottom: 15px; animation: fadeUp 1s ease-in-out; }
+    .hero p { font-size: clamp(1rem, 2.5vw, 1.2rem); margin-bottom: 10px; line-height: 1.6; text-align: justify; animation: fadeUp 1.2s ease-in-out; }
+
+    .content { max-width: 900px; margin: 40px auto; padding: 0 20px; animation: fadeIn 1s ease-in-out; }
+    .content h2, .content h3 { text-align: center; }
+    .content h3 { text-align: left; margin-top: 25px; }
+    .content p { text-align: justify; margin-bottom: 10px; line-height: 1.7; }
+
+    /* Back to Top Button */
+    #backToTop {
+      position: fixed; bottom: 30px; right: 30px;
+      background-color: #FDD835; color: #1B5E20;
+      border: none; border-radius: 50%; width: 50px; height: 50px;
+      font-size: 1.5rem; cursor: pointer; display: none; align-items: center; justify-content: center;
+      z-index: 100; transition: background 0.3s;
+    }
+    #backToTop:hover { background-color: #FFC107; }
+
+    footer { background-color: #fff; text-align: center; padding: 20px; margin-top: 40px; box-shadow: 0 -2px 6px rgba(0,0,0,0.05); }
+
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 480px) {
+      .hero { padding: 40px 15px; }
+      .hero h1 { font-size: 1.8rem; }
+      .hero p { font-size: 1rem; }
+      .content h3 { font-size: 1.1rem; }
+      .content p { font-size: 0.95rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo-outer">
+        <img src="images/logo.JPG" alt="Sebetsa Africa Logo" />
+      </a>
+      <div class="container">
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="jobseekers.html">Job Seekers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Our Services</h1>
+      <p>
+        Sebetsa Africa offers comprehensive workforce solutions designed to help businesses focus on their core operations while we handle the human element.
+      </p>
+    </section>
+
+    <section class="content">
+      <h2>Service Offerings</h2>
+
+      <h3>🔹 Recruitment Solutions</h3>
+      <p>
+        We connect the right talent with the right opportunity. From permanent placements to fixed-term contracts, we ensure that businesses hire skilled professionals who drive growth.
+      </p>
+
+      <h3>🔹 Workforce Management</h3>
+      <p>
+        We assist businesses with structuring, managing, and optimizing their workforce. This includes compliance, payroll coordination, HR process alignment, and performance monitoring.
+      </p>
+
+      <h3>🔹 Advisory & Compliance Support</h3>
+      <p>
+        Labour laws and compliance can be complex. Sebetsa Africa helps businesses stay aligned with regulations and reduce risk through expert workforce advisory services.
+      </p>
+
+      <h3>🔹 Skills Development & Training</h3>
+      <p>
+        We provide training programs to upskill employees, increase productivity, and prepare workforces for long-term success.
+      </p>
+    </section>
+  </main>
+
+  <button id="backToTop">&#8679;</button>
+
+  <footer>
+    <p>&copy; 2025 Sebetsa Africa. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const backToTopButton = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) backToTopButton.style.display = "flex";
+      else backToTopButton.style.display = "none";
+    });
+    backToTopButton.addEventListener("click", () => { window.scrollTo({ top: 0, behavior: "smooth" }); });
+  </script>
+</body>
+</html>
